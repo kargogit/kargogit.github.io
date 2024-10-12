@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import './styles.css';
 
 const sections = [
   { id: 'about', title: 'About Me', content: 'Versatile Software Developer with track record at multinational firms, committed to delivering innovative solutions leveraging diverse tech stacks.' },
