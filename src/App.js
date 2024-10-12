@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 text-gray-900">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <header className="bg-white shadow-md py-4 sticky top-0 z-50">
     <nav className="container mx-auto flex justify-between items-center px-6">
     <h1 className="text-2xl font-bold tracking-wide">Kartik Goel</h1>
