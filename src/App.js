@@ -5,19 +5,28 @@ import './styles.css';
 const SECTIONS = ['about', 'employment', 'skills', 'education', 'contact'];
 
 const SKILLS = [
-  { category: 'Programming Languages', items: ['Python', 'Java', 'C', 'JavaScript'] },
-  { category: 'CI/CD', items: ['Docker', 'Kubernetes', 'AWS', 'Maven'] },
-  { category: 'Libraries & Frameworks', items: ['Django', 'Spring', 'React', 'Tailwind', 'RabbitMQ', 'jBPM', 'Numpy + Pandas + Scikit-Learn'] },
-  { category: 'Databases', items: ['SQL', 'MongoDB'] },
-  { category: 'Operating Systems', items: ['Windows', 'Linux', 'BSD'] },
-  { category: 'Others', items: ['Matplotlib', 'PowerBI', 'Tableau', 'Jupyter Notebook'] }
+  { category: 'Programming Languages', items: ['Python', 'Java', 'C/C++', 'OCaml', 'CUDA', 'JavaScript'] },
+  { category: 'CI/CD & Cloud', items: ['Docker', 'AWS'] },
+  { category: 'Libraries & ML', items: ['NumPy', 'Pandas', 'Scikit-Learn', 'PyTorch'] },
+  { category: 'Systems & Compilers', items: ['Linux', 'LLVM', 'GDB', 'CompCert', 'ANTLR', 'NVCC'] },
+  { category: 'Databases', items: ['SQL'] },
+  { category: 'Specialties', items: ['Program Analysis', 'Decompilation', 'AI (ML & DL)', 'GPU Programming'] }
 ];
 
 const EMPLOYMENT_HISTORY = [
   {
-    company: 'HP Enterprise (Juniper Networks)',
+    company: 'Virginia Tech',
+    position: 'Research Assistant | Systems Software Research Group',
+    duration: 'Sep 2024 - Present | Blacksburg, VA',
+    responsibilities: [
+      'Building lexer/parser for a formally verified language extending CompCert (POPL submission).',
+      'Developing x86-to-LLVM IR decompiler for cross-architecture porting (DARPA project).'
+    ]
+  },
+  {
+    company: 'HP Enterprise',
     position: 'Software Engineer II | Developer Tools Team',
-    duration: 'Nov 2022 - July 2024 | Bangalore, India',
+    duration: 'Nov 2022 - Jul 2024 | Bangalore, India',
     responsibilities: [
       'Developed and maintained the internal Bug Tracking tool (the Rule Engine, the Notification system, and Business Logic layer).',
       'Developed a Chatbot for addressing frequent user queries.'
@@ -25,33 +34,32 @@ const EMPLOYMENT_HISTORY = [
   },
   {
     company: 'JP Morgan Chase & Co.',
-    position: 'Software Engineer | Trade & Risk Team',
-    duration: 'July 2021 - Nov 2022 | Bangalore, India',
+    position: 'Quantitative Software Engineer | Trade & Risk',
+    duration: 'Jul 2021 - Nov 2022 | Bangalore, India',
     responsibilities: [
-      'Applied statistical measures for monitoring and flagging.',
-      'Migrated legacy code-base (From Python 2 to Python 3) & rewrote the Reconciliation engine.'
+      'Migrated Python 2 → 3 codebase and rewrote reconciliation engine.',
+      'Applied statistical measures for monitoring and flagging.'
     ]
   },
   {
     company: 'JP Morgan Chase & Co.',
-    position: 'Software Intern | Reconciliations Team',
+    position: 'Software Intern | Reconciliations',
     duration: 'Jan 2020 - Jun 2020 | Mumbai, India',
     responsibilities: [
-      'Exposed to various industry standards such as Version Control, CI/CD, Design Patterns etc.',
-      'Developed a File Watcher and its corresponding ETL pipeline.'
+      'Built file watcher with end-to-end ETL pipeline, automating data ingestion.'
     ]
   }
 ];
 
 const EDUCATION = [
-  { institution: 'Virginia Tech', degree: 'MS in Computer Engineering', duration: '2024 - 2026', location: 'Blacksburg, Virginia, United States' },
+  { institution: 'Virginia Tech', degree: 'MS in Computer Engineering', duration: '2024 - 2026', location: 'Blacksburg, Virginia, USA' },
   { institution: 'Punjab Engineering College', degree: 'BE in Computer Science & Engg', duration: '2017 - 2021', location: 'Chandigarh, India' },
   { institution: 'Delhi Private School', degree: 'Central Board of Secondary Education', location: 'Sharjah, United Arab Emirates' }
 ];
 
 const Footer = () => (
   <footer className="bg-white shadow-md py-4">
-  <div className="container mx-auto text-center text-sm">© 2024 My Portfolio. All rights reserved.</div>
+  <div className="container mx-auto text-center text-sm">© 2025 Kartik Goel. All rights reserved.</div>
   </footer>
 );
 
@@ -110,7 +118,7 @@ const EmploymentSection = () => (
     <h4 className="text-sm text-gray-600">{duration}</h4>
     <ul>
     {responsibilities.map((task, idx) => (
-      <li key={idx} className="mt-2">{task}</li>
+      <li key={idx} className="mt-2">• {task}</li>
     ))}
     </ul>
     </Card>
@@ -136,7 +144,7 @@ const EducationSection = () => (
 
 const ContactSection = () => (
   <Section id="contact" title="Contact">
-  <p className="text-lg mb-6 text-center">Feel free to reach out to me via email or follow me on social media!</p>
+  <p className="text-lg mb-6 text-center">Feel free to reach out via email or LinkedIn!</p>
   <div className="flex justify-center space-x-6 text-2xl">
   <a href="https://github.com/kargogit" className="hover:text-gray-700 transition duration-300"><FaGithub /></a>
   <a href="https://www.linkedin.com/in/kartikg-profile" className="hover:text-blue-700 transition duration-300"><FaLinkedin /></a>
@@ -151,8 +159,8 @@ const App = () => (
   <Header />
     <main className="container mx-auto px-6 py-12">
     <Section id="about" title="About Me">
-    <p className="text-lg leading-relaxed max-w-2xl mx-auto">
-    Versatile Software Developer with a track record at multinational firms
+    <p className="text-lg leading-relaxed max-w-2xl mx-auto text-center">
+    MS Computer Engineering @ Virginia Tech. Research Assistant in Systems Software (CompCert, LLVM). Ex-SWE II at HPE and Quantitative SWE at J.P. Morgan.
     </p>
     </Section>
     <SkillsSection />
