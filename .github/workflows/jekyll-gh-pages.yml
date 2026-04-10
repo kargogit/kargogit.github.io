@@ -1,4 +1,3 @@
-# Deploy React (Create React App) to GitHub Pages
 name: Deploy React App to GitHub Pages
 
 on:
@@ -22,24 +21,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build React App
         run: npm run build
-        # If your build fails on warnings, use this instead:
-        # run: CI=false npm run build
+        env:
+          CI: false
 
-      - name: Upload artifact
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
